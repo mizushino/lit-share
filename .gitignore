@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.tgz
+*.tsbuildinfo
+.DS_Store
+.wireit
+/temp
+.idea
+/.direnv/
+/.envrc
+/.actrc

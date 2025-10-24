@@ -1,0 +1,54 @@
+{
+  "name": "lit-share",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "dev": "wds --config web-dev-server.config.mjs"
+  },
+  "keywords": [
+    "lit",
+    "lit-html",
+    "share",
+    "web-components"
+  ],
+  "author": "mizushino",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mizushino/lit-share.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mizushino/lit-share/issues"
+  },
+  "homepage": "https://github.com/mizushino/lit-share#readme",
+  "peerDependencies": {
+    "lit": "^3.0.0"
+  },
+  "dependencies": {
+    "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.4.6",
+    "@web/dev-server-esbuild": "^1.0.4",
+    "typescript": "^5.9.3"
+  }
+}
