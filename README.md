@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/lit-share.svg)](https://www.npmjs.com/package/lit-share)
 [![npm downloads](https://img.shields.io/npm/dm/lit-share.svg)](https://www.npmjs.com/package/lit-share)
-![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
+![ts](https://img.shields.io/badge/ts-Ready-blue)
 ![Tree Shakeable](https://img.shields.io/badge/Tree%20Shakeable-Yes-brightgreen)
 
 A lightweight decorator for sharing reactive state across Lit elements.
@@ -10,7 +10,7 @@ A lightweight decorator for sharing reactive state across Lit elements.
 **✨ Key Features:**
 - **Simple API** - Use `@share()` decorator just like `@property()`
 - **Automatic synchronization** - Changes in one element instantly reflect in all others
-- **Type-safe** - Full TypeScript support with generics
+- **Type-safe** - Full ts support with generics
 - **Performance optimized** - O(1) lookups with Map-based storage
 - **Custom change detection** - Support for `hasChanged` like Lit's `@property`
 - **Listener support** - Monitor value changes outside component lifecycle
@@ -27,7 +27,7 @@ npm install lit-share
 
 Share state across multiple elements with a simple decorator:
 
-```typescript
+```ts
 import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { share } from 'lit-share';
@@ -60,7 +60,7 @@ Both components share the same `count` value. Clicking the button in `counter-di
 
 Share the same value with different property names:
 
-```typescript
+```ts
 @customElement('user-profile')
 class UserProfile extends LitElement {
   @share({ key: 'currentUser' }) user = null;
@@ -84,7 +84,7 @@ class UserSettings extends LitElement {
 
 Use custom comparison logic like Lit's `hasChanged`:
 
-```typescript
+```ts
 interface Data {
   id: number;
   value: string;
@@ -117,7 +117,7 @@ class DataDisplay extends LitElement {
 
 Access shared values without the decorator:
 
-```typescript
+```ts
 import { LitShare } from 'lit-share';
 
 // Get with type safety
@@ -134,7 +134,7 @@ LitShare.set<number>('count', 42, true);
 
 Monitor value changes outside of element lifecycle:
 
-```typescript
+```ts
 import { LitShare } from 'lit-share';
 
 // Add listener
@@ -151,7 +151,7 @@ LitShare.removeListener('count', listener);
 
 **Lifecycle integration:**
 
-```typescript
+```ts
 class MyElement extends LitElement {
   private unsubscribe?: () => void;
 
@@ -177,7 +177,7 @@ class MyElement extends LitElement {
 
 Decorator for creating shared properties.
 
-```typescript
+```ts
 @share<T>(options?: ShareDeclaration<T>)
 ```
 
@@ -189,7 +189,7 @@ Decorator for creating shared properties.
 
 Get a shared value with type safety.
 
-```typescript
+```ts
 LitShare.get<T>(key: string, defaultValue?: T): T | undefined
 ```
 
@@ -203,7 +203,7 @@ LitShare.get<T>(key: string, defaultValue?: T): T | undefined
 
 Set a shared value and notify all registered elements.
 
-```typescript
+```ts
 LitShare.set<T>(key: string, value: T, force?: boolean): void
 ```
 
@@ -216,7 +216,7 @@ LitShare.set<T>(key: string, value: T, force?: boolean): void
 
 Add a listener for value changes.
 
-```typescript
+```ts
 LitShare.addListener<T>(key: string, listener: (newValue: T, oldValue: T | undefined) => void): () => void
 ```
 
@@ -230,7 +230,7 @@ LitShare.addListener<T>(key: string, listener: (newValue: T, oldValue: T | undef
 
 Remove a listener.
 
-```typescript
+```ts
 LitShare.removeListener<T>(key: string, listener: ShareListener<T>): void
 ```
 
@@ -257,7 +257,7 @@ lit-share uses a Map-based architecture for O(1) lookups and updates:
 
 ### Shared Application State
 
-```typescript
+```ts
 @customElement('app-root')
 class AppRoot extends LitElement {
   @share({ key: 'theme' }) theme = 'light';
@@ -276,7 +276,7 @@ class ThemeToggle extends LitElement {
 
 ### Global Counters/Flags
 
-```typescript
+```ts
 @customElement('loading-spinner')
 class LoadingSpinner extends LitElement {
   @share() loadingCount = 0;
@@ -300,7 +300,7 @@ function stopLoading() {
 
 ## Best Practices
 
-1. **Use TypeScript** - Leverage generics for type safety
+1. **Use ts** - Leverage generics for type safety
 2. **Name keys explicitly** - Use `key` option for important shared state
 3. **Implement hasChanged for objects** - Avoid unnecessary re-renders
 4. **Clean up listeners** - Always unsubscribe in `disconnectedCallback`
