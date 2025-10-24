@@ -314,7 +314,3 @@ Check out the [examples](./examples) directory for more usage patterns.
 ## License
 
 MIT
-
-## Author
-
-mizushino
