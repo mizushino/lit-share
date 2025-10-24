@@ -1,7 +1,7 @@
 {
   "name": "lit-share",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.1",
+  "description": "A lightweight decorator for sharing reactive state across Lit elements",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

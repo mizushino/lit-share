@@ -1,1 +1,1 @@
-export * from './builder';
+export * from './share.js';
